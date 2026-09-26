@@ -1,16 +1,10 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-<meta
-    name="viewport"
-    content="width=device-width,initial-scale=1"
->
-
-<title>Professional Portal | Luvio HealthLink</title>
+<title>Professional Login | Luvio HealthLink</title>
 
 <style>
 
@@ -35,7 +29,7 @@ header{
 }
 
 header a{
-    color:inherit;
+    color:#fff;
     text-decoration:none;
 }
 
@@ -51,6 +45,28 @@ header a{
     border-radius:18px;
     box-shadow:0 8px 30px #0001;
     margin-bottom:22px;
+}
+
+.login-card{
+    max-width:1000px;
+    margin:40px auto;
+}
+
+h1{
+    margin-top:0;
+    font-size:30px;
+}
+
+h2{
+    margin-top:0;
+}
+
+.description{
+    color:#536979;
+    line-height:1.7;
+    max-width:780px;
+    margin:8px 0 25px;
+    font-size:16px;
 }
 
 .grid{
@@ -71,6 +87,7 @@ select{
     padding:12px;
     border:1px solid #ccd8e1;
     border-radius:9px;
+    font-size:15px;
 }
 
 button,
@@ -99,7 +116,7 @@ button,
     display:flex;
     gap:10px;
     flex-wrap:wrap;
-    margin-top:20px;
+    margin-top:22px;
 }
 
 .hidden{
@@ -111,6 +128,7 @@ button,
     background:#edf7fa;
     border-radius:9px;
     margin:14px 0;
+    line-height:1.5;
 }
 
 .error{
@@ -118,6 +136,7 @@ button,
     background:#fff0f0;
     color:#a33;
     border-radius:9px;
+    margin-bottom:15px;
 }
 
 .id{
@@ -138,15 +157,6 @@ button,
     border-radius:12px;
 }
 
-.tile h3{
-    margin-top:0;
-}
-
-.tile a{
-    text-decoration:none;
-    color:inherit;
-}
-
 @media(max-width:700px){
 
     .grid,
@@ -155,20 +165,21 @@ button,
     }
 
     header{
+        gap:15px;
         flex-direction:column;
         align-items:flex-start;
-        gap:12px;
+    }
+
+    .login-card{
+        margin-top:20px;
     }
 
 }
 
 </style>
-
 </head>
 
-
 <body>
-
 
 <header>
 
@@ -184,58 +195,22 @@ button,
 <main class="wrap">
 
 
-<!-- =========================================
-     ENTRY
-========================================= -->
+<!-- =========================
+     PROFESSIONAL LOGIN
+========================= -->
 
-<section
-    id="entry"
-    class="card"
->
+<section id="login" class="card login-card">
 
-    <h1>
-        Professional Portal
-    </h1>
+    <h1>Professional Login</h1>
 
-    <p>
-        Your independent healthcare professional
-        identity. Register once and connect with
-        participating healthcare organizations.
+    <p class="description">
+        Sign in to your Luvio HealthLink professional account.
+        Your professional identity is independent of any single healthcare
+        organization and can be connected with participating organizations
+        according to your professional role and authorization.
     </p>
 
-    <div class="actions">
-
-        <button onclick="loginScreen()">
-            Login
-        </button>
-
-        <button
-            class="secondary"
-            onclick="signupScreen()"
-        >
-            Sign Up / Register
-        </button>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     LOGIN
-========================================= -->
-
-<section
-    id="login"
-    class="card hidden"
->
-
-    <h2>
-        Professional Login
-    </h2>
-
     <div id="lm"></div>
-
 
     <div class="grid">
 
@@ -280,7 +255,7 @@ button,
 
             <input
                 id="lu"
-                type="text"
+                placeholder="Enter your User ID"
             >
 
         </div>
@@ -295,6 +270,7 @@ button,
             <input
                 id="lp"
                 type="password"
+                placeholder="Enter your password"
             >
 
         </div>
@@ -317,7 +293,7 @@ button,
 
         <button
             class="secondary"
-            onclick="entryScreen()"
+            onclick="goBack()"
         >
             ← Back
         </button>
@@ -327,22 +303,20 @@ button,
 </section>
 
 
-<!-- =========================================
-     SIGN UP
-========================================= -->
 
-<section
-    id="signup"
-    class="card hidden"
->
+<!-- =========================
+     PROFESSIONAL REGISTRATION
+========================= -->
+
+<section id="signup" class="card hidden">
 
     <h2>
         Create Professional Identity
     </h2>
 
     <p>
-        Your professional identity belongs to you,
-        not to a clinic, pharmacy, laboratory or hospital.
+        Your professional identity is owned by you,
+        not by a clinic or organization.
     </p>
 
     <div id="sm"></div>
@@ -390,10 +364,7 @@ button,
                 Full Name *
             </label>
 
-            <input
-                id="pn"
-                type="text"
-            >
+            <input id="pn">
 
         </div>
 
@@ -404,10 +375,7 @@ button,
                 Specialization / Department
             </label>
 
-            <input
-                id="ps"
-                type="text"
-            >
+            <input id="ps">
 
         </div>
 
@@ -418,10 +386,7 @@ button,
                 Professional Registration Number *
             </label>
 
-            <input
-                id="pr"
-                type="text"
-            >
+            <input id="pr">
 
         </div>
 
@@ -435,7 +400,6 @@ button,
             <input
                 id="pm"
                 maxlength="10"
-                type="text"
             >
 
         </div>
@@ -461,10 +425,7 @@ button,
                 Registration Authority
             </label>
 
-            <input
-                id="pa"
-                type="text"
-            >
+            <input id="pa">
 
         </div>
 
@@ -478,7 +439,6 @@ button,
             <input
                 id="px"
                 type="number"
-                min="0"
             >
 
         </div>
@@ -490,10 +450,7 @@ button,
                 Choose User ID *
             </label>
 
-            <input
-                id="pu"
-                type="text"
-            >
+            <input id="pu">
 
         </div>
 
@@ -530,9 +487,9 @@ button,
 
     <div class="notice">
 
-        Prototype: professional verification is represented
-        by Pending Verification. Production will require
-        secure verification and backend authentication.
+        Prototype: professional verification is represented by
+        Pending Verification. Production will require secure
+        verification and backend authentication.
 
     </div>
 
@@ -555,21 +512,19 @@ button,
 </section>
 
 
-<!-- =========================================
+
+<!-- =========================
      PROFESSIONAL DASHBOARD
-========================================= -->
+========================= -->
 
 <section
     id="dash"
     class="hidden"
 >
 
-
     <div class="card">
 
-        <h1 id="wn">
-            Welcome
-        </h1>
+        <h1 id="wn"></h1>
 
         <div
             id="wid"
@@ -586,7 +541,6 @@ button,
             </b>
 
         </div>
-
 
         <button
             class="danger"
@@ -607,105 +561,79 @@ button,
         <div class="tiles">
 
 
-            <!-- PROFILE -->
-
             <div class="tile">
 
                 <h3>
-                    👤 Profile
+                    Organizations
                 </h3>
 
                 <p>
-                    View and manage your
-                    professional identity.
-                </p>
-
-                <a
-                    class="btn"
-                    href="professional-profile.html"
-                >
-                    Open Profile
-                </a>
-
-            </div>
-
-
-            <!-- ORGANIZATIONS -->
-
-            <div class="tile">
-
-                <h3>
-                    🏢 My Organizations
-                </h3>
-
-                <p>
-                    View organizations you are
-                    associated with and manage
-                    association requests.
+                    Manage future association requests.
                 </p>
 
             </div>
 
 
-            <!-- OPPORTUNITIES -->
-
             <div class="tile">
 
                 <h3>
-                    💼 Opportunities
+                    Opportunities
                 </h3>
 
                 <p>
-                    Explore professional jobs
-                    and healthcare opportunities.
+                    View professional jobs and opportunities.
                 </p>
 
             </div>
 
 
-            <!-- AVAILABILITY -->
-
             <div class="tile">
 
                 <h3>
-                    📅 Availability
+                    Schedule
                 </h3>
 
                 <p>
-                    Manage your professional
-                    availability.
+                    Manage availability and appointments.
                 </p>
 
             </div>
 
 
-            <!-- ASSOCIATIONS -->
-
             <div class="tile">
 
                 <h3>
-                    📩 Association Requests
+                    Patients
                 </h3>
 
                 <p>
-                    Accept or decline requests
-                    from healthcare organizations.
+                    Access authorized patient workflows.
                 </p>
 
             </div>
 
 
-            <!-- SETTINGS -->
+            <div class="tile">
+
+                <h3>
+                    Consultations
+                </h3>
+
+                <p>
+                    Manage consultation records.
+                </p>
+
+            </div>
+
 
             <div class="tile">
 
                 <h3>
-                    ⚙️ Settings
+                    Profile
                 </h3>
 
                 <p>
-                    Manage your professional
-                    account settings.
+                    Manage professional information.
                 </p>
 
             </div>
@@ -714,7 +642,6 @@ button,
         </div>
 
     </div>
-
 
 </section>
 
@@ -725,31 +652,9 @@ button,
 <script>
 
 
-/*
-====================================================
-LUVIO PROFESSIONAL PORTAL
-====================================================
+const K = 'luvio_doctor_accounts';
 
-Prototype storage:
-
-luvio_doctor_accounts
-luvio_current_doctor
-
-These names are retained for compatibility
-with the existing prototype data.
-
-Later they will be replaced by the
-Luvio backend/database.
-====================================================
-*/
-
-
-const K =
-    'luvio_doctor_accounts';
-
-
-const C =
-    'luvio_current_doctor';
+const C = 'luvio_current_doctor';
 
 
 function A(){
@@ -771,184 +676,134 @@ function S(x){
 }
 
 
-function hide(){
-
-    [
-        'entry',
-        'login',
-        'signup',
-        'dash'
-    ].forEach(x => {
-
-        document
-            .getElementById(x)
-            .classList
-            .add('hidden');
-
-    });
-
-}
-
-
-function entryScreen(){
-
-    hide();
-
-    document
-        .getElementById('entry')
-        .classList
-        .remove('hidden');
-
-}
-
+/* =========================
+   SHOW LOGIN
+========================= */
 
 function loginScreen(){
 
-    hide();
+    document.getElementById('login')
+        .classList.remove('hidden');
 
-    document
-        .getElementById('login')
-        .classList
-        .remove('hidden');
+    document.getElementById('signup')
+        .classList.add('hidden');
 
-    document
-        .getElementById('lm')
-        .innerHTML = '';
+    document.getElementById('dash')
+        .classList.add('hidden');
+
+    document.getElementById('lm').innerHTML = '';
 
 }
 
+
+/* =========================
+   SHOW SIGNUP
+========================= */
 
 function signupScreen(){
 
-    hide();
+    document.getElementById('login')
+        .classList.add('hidden');
 
-    document
-        .getElementById('signup')
-        .classList
-        .remove('hidden');
+    document.getElementById('signup')
+        .classList.remove('hidden');
 
-    document
-        .getElementById('sm')
-        .innerHTML = '';
+    document.getElementById('dash')
+        .classList.add('hidden');
+
+    document.getElementById('sm').innerHTML = '';
 
 }
 
 
+/* =========================
+   BACK TO HOMEPAGE
+========================= */
+
+function goBack(){
+
+    window.location.href = 'index.html';
+
+}
+
+
+/* =========================
+   ERROR
+========================= */
+
 function err(id,t){
 
-    document
-        .getElementById(id)
-        .innerHTML =
-        '<div class="error">'
-        + t +
+    document.getElementById(id).innerHTML =
+        '<div class="error">' +
+        t +
         '</div>';
 
 }
 
 
+/* =========================
+   GENERATE PROFESSIONAL ID
+========================= */
+
 function nid(t){
 
-    let prefix = {
+    let p = {
 
-        doctor:
-            'DOC',
+        doctor:'DOC',
 
-        pharmacist:
-            'PHARM',
+        pharmacist:'PHARM',
 
-        lab:
-            'LABPRO',
+        lab:'LABPRO',
 
-        nurse:
-            'NURSE',
+        nurse:'NURSE',
 
-        other:
-            'PROF'
+        other:'PROF'
 
     }[t] || 'PROF';
 
 
-    let number =
+    let n =
         A().filter(
-            x =>
-            x.id &&
-            x.id.startsWith(prefix + '-')
+            x => x.id.startsWith(p + '-')
         ).length + 1;
 
 
-    return prefix +
-        '-' +
-        String(number)
-            .padStart(6,'0');
+    return p + '-' +
+        String(n).padStart(6,'0');
 
 }
 
 
+/* =========================
+   REGISTER
+========================= */
+
 function register(){
 
-    let accounts = A();
+    let a = A();
 
+    let t = pt.value;
 
-    let type =
-        document
-            .getElementById('pt')
-            .value;
+    let n = pn.value.trim();
 
+    let r = pr.value.trim();
 
-    let name =
-        document
-            .getElementById('pn')
-            .value
-            .trim();
+    let m = pm.value.trim();
 
+    let e = pe.value.trim();
 
-    let registration =
-        document
-            .getElementById('pr')
-            .value
-            .trim();
+    let u = pu.value.trim();
 
-
-    let mobile =
-        document
-            .getElementById('pm')
-            .value
-            .trim();
-
-
-    let email =
-        document
-            .getElementById('pe')
-            .value
-            .trim();
-
-
-    let userId =
-        document
-            .getElementById('pu')
-            .value
-            .trim();
-
-
-    let password =
-        document
-            .getElementById('pp')
-            .value;
-
-
-    let confirmPassword =
-        document
-            .getElementById('pc')
-            .value;
+    let p = pp.value;
 
 
     if(
-        !name ||
-        !registration ||
-        !mobile ||
-        !email ||
-        !userId ||
-        !password
+        !n ||
+        !r ||
+        !m ||
+        !e ||
+        !u ||
+        !p
     ){
 
         return err(
@@ -960,7 +815,7 @@ function register(){
 
 
     if(
-        !/^\d{10}$/.test(mobile)
+        !/^\d{10}$/.test(m)
     ){
 
         return err(
@@ -972,7 +827,7 @@ function register(){
 
 
     if(
-        password !== confirmPassword
+        p !== pc.value
     ){
 
         return err(
@@ -984,11 +839,11 @@ function register(){
 
 
     if(
-        accounts.some(
+        a.some(
             x =>
-            x.userId &&
-            x.userId.toLowerCase() ===
-            userId.toLowerCase()
+            x.userId.toLowerCase()
+            ===
+            u.toLowerCase()
         )
     ){
 
@@ -1000,48 +855,32 @@ function register(){
     }
 
 
-    let professional = {
+    let o = {
 
-        id:
-            nid(type),
+        id:nid(t),
 
-        type:
-            type,
+        type:t,
 
-        name:
-            name,
+        name:n,
 
         specialization:
-            document
-                .getElementById('ps')
-                .value
-                .trim(),
+            ps.value.trim(),
 
-        registration:
-            registration,
+        registration:r,
 
-        mobile:
-            mobile,
+        mobile:m,
 
-        email:
-            email,
+        email:e,
 
         authority:
-            document
-                .getElementById('pa')
-                .value
-                .trim(),
+            pa.value.trim(),
 
         experience:
-            document
-                .getElementById('px')
-                .value || '',
+            px.value || '',
 
-        userId:
-            userId,
+        userId:u,
 
-        password:
-            password,
+        password:p,
 
         status:
             'Pending Verification'
@@ -1049,27 +888,20 @@ function register(){
     };
 
 
-    accounts.push(professional);
+    a.push(o);
 
-    S(accounts);
+    S(a);
 
 
     alert(
         'Registration successful. Your Professional ID is '
-        + professional.id
+        + o.id
     );
 
 
-    document
-        .getElementById('lt')
-        .value =
-        type;
+    lt.value = t;
 
-
-    document
-        .getElementById('lu')
-        .value =
-        userId;
+    lu.value = u;
 
 
     loginScreen();
@@ -1077,37 +909,28 @@ function register(){
 }
 
 
+/* =========================
+   LOGIN
+========================= */
+
 function doLogin(){
 
-    let type =
-        document
-            .getElementById('lt')
-            .value;
+    let o = A().find(
+
+        x =>
+
+        x.type === lt.value &&
+
+        x.userId ===
+        lu.value.trim() &&
+
+        x.password ===
+        lp.value
+
+    );
 
 
-    let userId =
-        document
-            .getElementById('lu')
-            .value
-            .trim();
-
-
-    let password =
-        document
-            .getElementById('lp')
-            .value;
-
-
-    let professional =
-        A().find(
-            x =>
-            x.type === type &&
-            x.userId === userId &&
-            x.password === password
-        );
-
-
-    if(!professional){
+    if(!o){
 
         return err(
             'lm',
@@ -1119,117 +942,102 @@ function doLogin(){
 
     localStorage.setItem(
         C,
-        JSON.stringify(professional)
+        JSON.stringify(o)
     );
 
 
-    openDashboard(professional);
+    open(o);
 
 }
 
 
-function openDashboard(professional){
+/* =========================
+   OPEN DASHBOARD
+========================= */
 
-    hide();
+function open(o){
+
+    document.getElementById('login')
+        .classList.add('hidden');
+
+    document.getElementById('signup')
+        .classList.add('hidden');
+
+    document.getElementById('dash')
+        .classList.remove('hidden');
 
 
-    document
-        .getElementById('dash')
-        .classList
-        .remove('hidden');
-
-
-    document
-        .getElementById('wn')
+    document.getElementById('wn')
         .textContent =
-        'Welcome, ' +
-        professional.name;
+        'Welcome, ' + o.name;
 
 
-    document
-        .getElementById('wid')
+    document.getElementById('wid')
         .textContent =
-        professional.id;
+        o.id;
 
 
-    document
-        .getElementById('wm')
+    document.getElementById('wm')
         .textContent =
-        formatType(professional.type)
-        +
-        ' • '
-        +
+
+        o.type +
+        ' • ' +
         (
-            professional.specialization ||
+            o.specialization ||
             'No specialization'
-        )
-        +
-        ' • Registration: '
-        +
-        professional.registration;
+        ) +
+        ' • Registration: ' +
+        o.registration;
 
 
-    document
-        .getElementById('ws')
+    document.getElementById('ws')
         .textContent =
-        professional.status;
+        o.status;
 
 }
 
 
-function formatType(type){
-
-    return {
-
-        doctor:
-            'Doctor',
-
-        pharmacist:
-            'Pharmacist',
-
-        lab:
-            'Laboratory Professional',
-
-        nurse:
-            'Nurse',
-
-        other:
-            'Other Healthcare Professional'
-
-    }[type] || 'Healthcare Professional';
-
-}
-
+/* =========================
+   LOGOUT
+========================= */
 
 function logout(){
 
     localStorage.removeItem(C);
 
-    entryScreen();
+    window.location.href =
+        'index.html';
 
 }
 
 
+/* =========================
+   PAGE LOAD
+========================= */
+
 window.onload = function(){
 
-    let professional =
+    let o =
         JSON.parse(
-            localStorage.getItem(C) || 'null'
+            localStorage.getItem(C) ||
+            'null'
         );
 
 
-    if(professional){
+    if(o){
 
-        openDashboard(
-            professional
-        );
+        open(o);
+
+    }else{
+
+        loginScreen();
 
     }
 
 };
 
-</script>
 
+</script>
 
 </body>
 </html>
